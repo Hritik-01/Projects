@@ -106,6 +106,8 @@ function start(){
  const subtract = document.getElementById('subtract');
  const divide = document.getElementById('divide');
  const Startgame = document.getElementById('startGame');
+ const hint= document.getElementById('hint');
+ const next = document.getElementById('nextq');
   plus.addEventListener('click', function() {
     addingOperator("+");
   });
@@ -139,6 +141,22 @@ function start(){
    intro.style.height = "0";
    start();
   });
-  
+  let click = 1;
+  hint.addEventListener('click', function(){
+   const next = document.getElementById('nextq') ;
+   if(click == 1){
+   next.style.display = "block";
+     click = 2;
+   }
+   else{
+     next.style.display= "none";
+     click = 1;
+   }
+  });
+  next.addEventListener('click',function(){
+    start();
+    next.style.display="none";
+    click = 1;
+  })
   
 };
