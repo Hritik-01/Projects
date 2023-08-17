@@ -113,3 +113,29 @@ font-family: 'Ubuntu', sans-serif;
   padding: 10px;
   text-align: center;
 }
+.Notpc{
+  display: none;
+}
+.nextq{
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  padding-left: 10px;
+}
+#hint{
+  color: red;
+  display: inline;
+  font-size: 20px;
+}
+#nextq{
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .body{
+    display: none;
+  }
+  .Notpc{
+    display: block;
+  }
+}
