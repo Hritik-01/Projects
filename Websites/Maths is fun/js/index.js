@@ -51,7 +51,7 @@ function start(){
   document.getElementById('operator3').innerHTML = "?";
  const result = initializeQuestion();
   document.getElementById('result').innerHTML = eval(result);
-   console.log(result);
+   
 }
 
   const operator1Element = document.getElementById('operator1');
@@ -76,7 +76,7 @@ function start(){
   const expression = `${operand1.innerHTML} ${operator1Element.innerHTML} ${operand2.innerHTML} ${operator2Element.innerHTML} ${operand3.innerHTML} ${operator3Element.innerHTML} ${operand4.innerHTML}`;
   
   const calculatedResult = eval(expression);
-  console.log(expression + "value " + eval(expression));
+  
   if (calculatedResult == result) {
     alert("Correct!");
     start();
@@ -105,6 +105,7 @@ function start(){
  const plus = document.getElementById('add');
  const subtract = document.getElementById('subtract');
  const divide = document.getElementById('divide');
+ const Startgame = document.getElementById('startGame');
   plus.addEventListener('click', function() {
     addingOperator("+");
   });
@@ -132,5 +133,12 @@ function start(){
   checkButton.addEventListener('click', function() {
     checkAnswer();
   });
-  start();
+  Startgame.addEventListener('click',
+  function(){
+   const intro = document.getElementById('introdiv'); 
+   intro.style.height = "0";
+   start();
+  });
+  
+  
 };
